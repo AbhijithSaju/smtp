@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMTP Email Communication Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="mail-icon" aria-hidden="true">✉</div>
+      <p class="eyebrow">NETWORKING LAB · WEB DEMONSTRATION</p>
+      <h1>Email Communication Using SMTP</h1>
+      <p class="subtitle">Compose a message and send it through a Simple Mail Transfer Protocol server.</p>
+    </header>
+
+    <section class="layout">
+      <form id="emailForm" class="card">
+        <div class="card-heading">
+          <div><p class="eyebrow">NEW MESSAGE</p><h2>Compose email</h2></div>
+          <span class="secure-pill"><span></span> SMTP</span>
+        </div>
+        <label for="to">Recipient email</label>
+        <input id="to" name="to" type="email" placeholder="recipient@example.com" required />
+
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text" maxlength="160" placeholder="Enter email subject" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="7" maxlength="10000" placeholder="Write your email message here..." required></textarea>
+
+        <button id="sendButton" type="submit"><span>➤</span> Send email</button>
+        <p class="privacy-note">Your SMTP credentials stay on the server and are never sent to the browser.</p>
+        <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+      </form>
+
+      <aside class="card info-card">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>SMTP message flow</h2>
+        <div class="flow">
+          <div class="flow-step"><span class="step-number">1</span><div><strong>Compose</strong><p>Enter recipient, subject and message.</p></div></div>
+          <div class="flow-line"></div>
+          <div class="flow-step"><span class="step-number">2</span><div><strong>Web application</strong><p>The browser sends the message to the Node.js backend.</p></div></div>
+          <div class="flow-line"></div>
+          <div class="flow-step"><span class="step-number">3</span><div><strong>SMTP server</strong><p>Nodemailer connects and submits the email using SMTP.</p></div></div>
+          <div class="flow-line"></div>
+          <div class="flow-step"><span class="step-number">4</span><div><strong>Recipient mail server</strong><p>The email is routed toward the recipient's mailbox.</p></div></div>
+        </div>
+        <div class="note-box"><strong>Protocol note</strong><p>SMTP is used to submit and relay outgoing email. IMAP or POP3 is typically used to retrieve messages.</p></div>
+      </aside>
+    </section>
+    <footer>SMTP Email Communication Demonstration <span>·</span> Educational use</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
